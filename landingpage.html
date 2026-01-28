@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hotel Discovery Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#ffffff",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111618] dark:text-white antialiased">
+<!-- Sticky Header -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-[#f0f3f4] dark:border-[#2a353b]">
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-20 h-20 flex items-center justify-between gap-4">
+<!-- Logo -->
+<div class="flex items-center gap-2 shrink-0">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="hidden lg:block text-xl font-bold tracking-tight text-primary">StayFinder</h1>
+</div>
+<!-- Central Search Bar -->
+<div class="flex items-center border border-[#dddddd] dark:border-[#2a353b] rounded-full shadow-sm hover:shadow-md transition-shadow cursor-pointer py-2 px-2 max-w-[450px] w-full bg-white dark:bg-[#1a262e]">
+<button class="flex-1 px-4 text-sm font-semibold border-r border-[#dddddd] dark:border-[#2a353b] text-center truncate">Anywhere</button>
+<button class="flex-1 px-4 text-sm font-semibold border-r border-[#dddddd] dark:border-[#2a353b] text-center truncate">Any week</button>
+<button class="flex-[1.2] px-4 text-sm font-normal text-[#617c89] text-center truncate">Add guests</button>
+<div class="bg-primary text-white p-2 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+</div>
+<!-- User Menu -->
+<div class="flex items-center gap-4 shrink-0">
+<a class="hidden md:block text-sm font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 p-3 rounded-full transition" href="#">Airbnb your home</a>
+<button class="p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</button>
+<div class="flex items-center gap-2 border border-[#dddddd] dark:border-[#2a353b] p-1.5 pl-3 rounded-full hover:shadow-md transition cursor-pointer">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+<div class="size-8 bg-gray-500 rounded-full bg-cover bg-center" data-alt="User profile placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3VbsJj9JIKrjMJ7Ex1PHwqxnKDw6_ilkYi5bPG0lg6lTfCzC-jKZ8RG-kQuR_mhBVlU1emODwJ3sGqAeEiozb3BZmV3_EiKeMGGmfDnE08ZSYXrrfJWVX_lsBtk6-rlT-C-6iyArxHvAz1o7K1S_FpMD0OzD-M3LjOuifRQFMv_OvzyNHqyuZ8nrF_PoBfyFpylA5CIt7xwSkIfz2jeupti6f--FD08AAbMW4zRqQYFyEksHyq6BTV-aVaDBJtXvSXB9HhBItfgY')"></div>
+</div>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-20 py-4 flex items-center gap-8">
+<div class="flex items-center gap-8 overflow-x-auto no-scrollbar flex-1">
+<div class="flex flex-col items-center gap-1 min-w-[56px] opacity-100 border-b-2 border-black dark:border-white pb-2 cursor-pointer">
+<span class="material-symbols-outlined text-[24px]">trending_up</span>
+<span class="text-[12px] font-medium whitespace-nowrap">Trending</span>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[56px] opacity-60 hover:opacity-100 hover:border-b-2 hover:border-[#dddddd] pb-2 cursor-pointer transition">
+<span class="material-symbols-outlined text-[24px]">beach_access</span>
+<span class="text-[12px] font-medium whitespace-nowrap">Beachfront</span>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[56px] opacity-60 hover:opacity-100 hover:border-b-2 hover:border-[#dddddd] pb-2 cursor-pointer transition">
+<span class="material-symbols-outlined text-[24px]">cabin</span>
+<span class="text-[12px] font-medium whitespace-nowrap">Cabins</span>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[56px] opacity-60 hover:opacity-100 hover:border-b-2 hover:border-[#dddddd] pb-2 cursor-pointer transition">
+<span class="material-symbols-outlined text-[24px]">pool</span>
+<span class="text-[12px] font-medium whitespace-nowrap">Amazing pools</span>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[56px] opacity-60 hover:opacity-100 hover:border-b-2 hover:border-[#dddddd] pb-2 cursor-pointer transition">
+<span class="material-symbols-outlined text-[24px]">castle</span>
+<span class="text-[12px] font-medium whitespace-nowrap">Castles</span>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[56px] opacity-60 hover:opacity-100 hover:border-b-2 hover:border-[#dddddd] pb-2 cursor-pointer transition">
+<span class="material-symbols-outlined text-[24px]">landscape</span>
+<span class="text-[12px] font-medium whitespace-nowrap">Countryside</span>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[56px] opacity-60 hover:opacity-100 hover:border-b-2 hover:border-[#dddddd] pb-2 cursor-pointer transition">
+<span class="material-symbols-outlined text-[24px]">downhill_skiing</span>
+<span class="text-[12px] font-medium whitespace-nowrap">Skiing</span>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[56px] opacity-60 hover:opacity-100 hover:border-b-2 hover:border-[#dddddd] pb-2 cursor-pointer transition">
+<span class="material-symbols-outlined text-[24px]">waves</span>
+<span class="text-[12px] font-medium whitespace-nowrap">Lakefront</span>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[56px] opacity-60 hover:opacity-100 hover:border-b-2 hover:border-[#dddddd] pb-2 cursor-pointer transition">
+<span class="material-symbols-outlined text-[24px]">palette</span>
+<span class="text-[12px] font-medium whitespace-nowrap">Design</span>
+</div>
+<div class="flex flex-col items-center gap-1 min-w-[56px] opacity-60 hover:opacity-100 hover:border-b-2 hover:border-[#dddddd] pb-2 cursor-pointer transition">
+<span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+<span class="text-[12px] font-medium whitespace-nowrap">Icons</span>
+</div>
+</div>
+<button class="hidden md:flex items-center gap-2 border border-[#dddddd] dark:border-[#2a353b] px-4 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="text-xs font-semibold">Filters</span>
+</button>
+</div>
+</header>
+<!-- Main Content Grid -->
+<main class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-20 py-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-6 gap-y-10">
+<!-- Card 1 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square overflow-hidden rounded-xl">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md hover:scale-110 transition active:scale-95">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern beachfront villa with pool" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCpcpIezTcV5jnJhPcJkOAZshcdMogrGDswwE3Muk0X8j6SnMDTPN16aMrtcJmDw230M9VGain73496rGRak3k3gvud-2R7cImbuEfTBLaqZNTMd7UnOfzLIbPOTdcJOG7YbavzaY9OQV6zB9jwUN7bt0U6cpUdtoGKhK3oyk4bGtomR7DP2N87fBnfjjCOOv85TLtSnRNlOaC-rdBqoAqEPfrSI42b34-_EL_DPmmLonSfRSrRXleA1D1UuGT3qh2E6aLlLMAYBeA");'></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[15px] font-bold leading-tight">Malibu Beach House</p>
+<p class="text-[#617c89] text-[14px]">California, USA</p>
+<p class="text-[#617c89] text-[14px]">Aug 12 - 17</p>
+<p class="mt-1.5 text-[15px]"><span class="font-bold">$450</span> <span class="font-normal">night</span></p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">star</span>
+<span class="text-[14px] font-normal">4.92</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square overflow-hidden rounded-xl">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Luxury mountain cabin in Zermatt" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDQ3gKawJMKXlmZjAY1xnh3pc2YthwGWaZUEsG2jS59gMQsiLwCpiiAGuXBEWzzWy0auj6Lvic8iBpuUdA9J7g8bUpFtOXpNbe-XsBPcfIcFxrqchgb_HeRfD_seSVuNNKbDyGPvPYwqZNPd1pnQtYxEe5s0RNimO-ZAu70ORKkI1wHFzZeJ9v1cgFs8qLnR48CgTJvwB-7EXOeqxFaAhk8eFljwfAElSG1YbOwA13-hIhZHkSCz9brxu_dYyj0cNwZPIVWh6464Y");'></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[15px] font-bold">Alpine Cabin</p>
+<p class="text-[#617c89] text-[14px]">Zermatt, Switzerland</p>
+<p class="text-[#617c89] text-[14px]">Dec 1 - 6</p>
+<p class="mt-1.5 text-[15px]"><span class="font-bold">$320</span> <span class="font-normal">night</span></p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">star</span>
+<span class="text-[14px] font-normal">4.85</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square overflow-hidden rounded-xl">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Chic modern loft interior" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuzi32O9vxp5PyURtCB5ZC7wjXQSQqI-ZcjcB0W43TiOLhG79VV__iktIRdoViApu6Apl4a4CpWNwm-0fEcL4gCyCTAqwjHPk8FOd5OzlqV8EowRcrGVesuQbHL9mai_RQvfrEXjckJ4eUNL5XSCzJ2pfw_djt6ccOqYOCv0OWvwNTYjD6iF70D-aqmGFwslu3gLzHsc_ricxoxXiWWV86AmD_X4V-QrUwX0cd1_FvHsdqpjdl8TXaaPjbZ4Ni-0g7IvDSkzE96U0");'></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[15px] font-bold">Modern Loft</p>
+<p class="text-[#617c89] text-[14px]">New York, USA</p>
+<p class="text-[#617c89] text-[14px]">Sep 22 - 27</p>
+<p class="mt-1.5 text-[15px]"><span class="font-bold">$210</span> <span class="font-normal">night</span></p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">star</span>
+<span class="text-[14px] font-normal">4.78</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square overflow-hidden rounded-xl">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Coastal villa on Amalfi Coast" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBAYT5DG9zaZPNaQ-hOxQNH8pxDLtPh8WunHpP-DwOwpm9S0ip44LO9Qh6wUwDPK9TcYJ_3u4Aza22NYd9xgwpnWtmmRs3_APL3C7Zh0247JZ9pJvc7sjvqrSqlan-ec0FuUvFL0jfHw5Z4lS6QeytaTGpOraRrrFM70uXGQ_mlsc96LQnNDLom2ObTz3eTdcP__nzOAAwBztUnFn2y7rz8YpySlC-oLTMLceQx6CuR0WuReYRFHwytVHuKH1yVlp4D7nwEEXt5H8A");'></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[15px] font-bold">Seaside Villa</p>
+<p class="text-[#617c89] text-[14px]">Amalfi Coast, Italy</p>
+<p class="text-[#617c89] text-[14px]">Jul 14 - 21</p>
+<p class="mt-1.5 text-[15px]"><span class="font-bold">$580</span> <span class="font-normal">night</span></p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">star</span>
+<span class="text-[14px] font-normal">4.97</span>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square overflow-hidden rounded-xl">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Serene lake retreat in California" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFcewVg1QIe3Vktc4Ej19F9cjHrBH8lpMHpJxMCNXk8nqgGyn3aYeRKFmYsz9XG4wSl3NwCmiHdd0XmPWHDfREQ7WgM8HHabj2OQVchkxEv0XuVU_X3bGb6a6EjhSdeLhGC7r3Lo4IK0xjkdAgzKnFfgiOYNKU2crWi7PNeB57JiG5m6M-Vg0dLLfGpKf6uJ5TxQYch4UNBYW5WQfV-ZkTLLbfxyiVpKM2PtFX91fmcGm63ZozG3I7vuZoWZuTUUHADhkWBEGpFRo");'></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[15px] font-bold">Lake Tahoe Retreat</p>
+<p class="text-[#617c89] text-[14px]">California, USA</p>
+<p class="text-[#617c89] text-[14px]">Oct 5 - 10</p>
+<p class="mt-1.5 text-[15px]"><span class="font-bold">$275</span> <span class="font-normal">night</span></p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">star</span>
+<span class="text-[14px] font-normal">4.89</span>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square overflow-hidden rounded-xl">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Traditional Santorini white suite" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAj_GCu_jbqBO1_chSXU5HFRwxvE3HTPNEToBjoSuaZuSDXgDffNf1YkNK_PuT_yoR7YJhcm7pV8Men_DwmSe1bfqrh1SnYxYOkvl1DKx-sliGct-BldkNhkTAiwscPakqIFjTxKpaWNv13GTjIzN3mB6kPwzjddcyd7nQ7PVVU2Cms9dIkUb-hJ9F4tbXAdU4KM97bK-sd8kXzjBztEiBY8WEXm97moUy7_NeySnVxYnlnK1uB3wHu2NB28Nw5Xx9M0JqJRok1oRc");'></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[15px] font-bold">Santorini Suite</p>
+<p class="text-[#617c89] text-[14px]">Oia, Greece</p>
+<p class="text-[#617c89] text-[14px]">Sep 1 - 6</p>
+<p class="mt-1.5 text-[15px]"><span class="font-bold">$640</span> <span class="font-normal">night</span></p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">star</span>
+<span class="text-[14px] font-normal">4.95</span>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square overflow-hidden rounded-xl">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist Tokyo boutique hotel" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-PH4JvhhAdbmfvpvcehzQPKH3Ge1mMjNI7Ie08Y5TkqUtr24XOKdGUmZDv_XRQB3vTdzs3By0xk7z0GlR7Rbf5W5EQlHBSub3LIy04LPo5NUf3sB9_2wv9jBdbdJNNgwPN19dkzhSNmE51HiM0w186RKjbH9jMjh77JWuXAjaGv0v00xYYdLLj_xAnslhrOJ_zbgDEaVupqnzL7kIAsfH6yo78e0qGR9Q-xCUDfKsVrgiXr9uWCRZFne5pfpVpnLU4mu_89OkcBA");'></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[15px] font-bold">Tokyo Boutique</p>
+<p class="text-[#617c89] text-[14px]">Shibuya, Japan</p>
+<p class="text-[#617c89] text-[14px]">Nov 12 - 17</p>
+<p class="mt-1.5 text-[15px]"><span class="font-bold">$190</span> <span class="font-normal">night</span></p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">star</span>
+<span class="text-[14px] font-normal">4.82</span>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square overflow-hidden rounded-xl">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Luxury desert oasis villa" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANvS9VXQmwaLAnm-OgUvdqi1NvIieJM4PAtoZs4LUAsdmH6ONolrnwNHF7z_czWfV0ZdN2SxEhQmdGyrhnqMZidBGWDzCHy0Ou9xq7tsOSXzQXs2X0ul39pCfhYzszp9nF-ijOLexqLAdVwxESprmuoFyoylExru1Xe6CargSR0Wg7ISpgEAaF6zfojQuOm6VWzPaK7B1u0m7Koy8c2nyQDBt6am3BYUKAdKdqDTYq1K6ZD8IK_sHUQT3J4H6U2jz9j5wdsMocPdo");'></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[15px] font-bold">Desert Oasis</p>
+<p class="text-[#617c89] text-[14px]">Joshua Tree, USA</p>
+<p class="text-[#617c89] text-[14px]">Oct 20 - 25</p>
+<p class="mt-1.5 text-[15px]"><span class="font-bold">$310</span> <span class="font-normal">night</span></p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">star</span>
+<span class="text-[14px] font-normal">4.91</span>
+</div>
+</div>
+</div>
+<!-- Card 9 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square overflow-hidden rounded-xl">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Chateau in French countryside" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC23tDyKDOUQzqWyEIBLNhlwqnBI8TXHhX3B7BthZhnkgGkjkKVkijuhQw0tt7CmcaKnGii4GJ9UGRU6JL4k-3_NVb_r3WQfbvw436f6270OcNZYvy411wx8OH8s1DbmA_YY1Ts3ppbKWaf9MRxxv2PX-UJ9VKLV2nt3peXvUC9rb5ySCLoY4-CHio97u8-TUyXJTF-tuq1CvBGiWG57dfJyWVscR0abY8m9uMn9A4ebbtsvU0sxejKPYblGMEJRuVKdTRDpJVIBZ0");'></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[15px] font-bold">Heritage Chateau</p>
+<p class="text-[#617c89] text-[14px]">Provence, France</p>
+<p class="text-[#617c89] text-[14px]">Jun 1 - 8</p>
+<p class="mt-1.5 text-[15px]"><span class="font-bold">$1,200</span> <span class="font-normal">night</span></p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">star</span>
+<span class="text-[14px] font-normal">4.99</span>
+</div>
+</div>
+</div>
+<!-- Card 10 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square overflow-hidden rounded-xl">
+<div class="absolute top-3 right-3 z-10 text-white drop-shadow-md">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Bamboo treehouse in jungle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-UV1mASczT3tS9FXj0HadIPcy2tCmt6DvGMNxFiki87Of76QQlSU8m_i31QYz0MdtV5d6CKmV1Q0uSqqzbiw6_MgLS9Lzg0VXzWbF8ubkqCyRG-zDhAqcG7u7y0eYhJQUpIzcaPxLgigEdF_k8ERhwoR5_-O_lxthlZ_PGYvSTow0cFYKPuLlejLDBr1rWEFs5PbgmHzBWvcnfzhrT3IM3yWVhmpDGdgrvN-GErI3aCkDC_hhTNMasamS4oaC1Nk8PO8Sy9S6Npw");'></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="text-[15px] font-bold">Bamboo Hideaway</p>
+<p class="text-[#617c89] text-[14px]">Bali, Indonesia</p>
+<p class="text-[#617c89] text-[14px]">Sep 10 - 15</p>
+<p class="mt-1.5 text-[15px]"><span class="font-bold">$175</span> <span class="font-normal">night</span></p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">star</span>
+<span class="text-[14px] font-normal">4.88</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Map Button -->
+<div class="fixed bottom-12 left-1/2 -translate-x-1/2 z-40">
+<button class="flex items-center gap-2 bg-[#222222] dark:bg-primary text-white px-5 py-3.5 rounded-full shadow-xl hover:scale-105 transition-transform active:scale-95 font-semibold text-sm">
+<span>Show map</span>
+<span class="material-symbols-outlined text-[20px]">map</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="border-t border-[#f0f3f4] dark:border-[#2a353b] bg-[#f9f9f9] dark:bg-[#0d161b] py-8">
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h4 class="font-bold mb-4">Support</h4>
+<ul class="text-[14px] text-[#617c89] space-y-3">
+<li><a class="hover:underline" href="#">Help Center</a></li>
+<li><a class="hover:underline" href="#">AirCover</a></li>
+<li><a class="hover:underline" href="#">Anti-discrimination</a></li>
+<li><a class="hover:underline" href="#">Disability support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Hosting</h4>
+<ul class="text-[14px] text-[#617c89] space-y-3">
+<li><a class="hover:underline" href="#">StayFinder your home</a></li>
+<li><a class="hover:underline" href="#">AirCover for Hosts</a></li>
+<li><a class="hover:underline" href="#">Hosting resources</a></li>
+<li><a class="hover:underline" href="#">Community forum</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">StayFinder</h4>
+<ul class="text-[14px] text-[#617c89] space-y-3">
+<li><a class="hover:underline" href="#">Newsroom</a></li>
+<li><a class="hover:underline" href="#">New features</a></li>
+<li><a class="hover:underline" href="#">Careers</a></li>
+<li><a class="hover:underline" href="#">Investors</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-20 border-t border-[#f0f3f4] dark:border-[#2a353b] mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[14px] text-[#617c89]">
+<div class="flex flex-wrap items-center gap-2">
+<span>© 2024 StayFinder, Inc.</span>
+<span>·</span>
+<a class="hover:underline" href="#">Privacy</a>
+<span>·</span>
+<a class="hover:underline" href="#">Terms</a>
+<span>·</span>
+<a class="hover:underline" href="#">Sitemap</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1 hover:underline cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">public</span>
+<span>English (US)</span>
+</div>
+<div class="flex items-center gap-1 hover:underline cursor-pointer font-semibold">
+<span>$ USD</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -11,7 +11,7 @@ export default function HomeHeader() {
           <h1 className="text-[#111618] dark:text-white text-xl font-bold leading-tight tracking-tight">StayFinder</h1>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          <a className="text-sm font-semibold hover:text-primary transition-colors" href="#">Explore</a>
+          <a className="text-sm font-semibold hover:text-primary transition-colors" href="/locations">Explore</a>
           <a className="text-sm font-semibold hover:text-primary transition-colors" href="#">Trips</a>
           <a className="text-sm font-semibold hover:text-primary transition-colors" href="#">Favorites</a>
           <a className="text-sm font-semibold hover:text-primary transition-colors" href="#">Support</a>

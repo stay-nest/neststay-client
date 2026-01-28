@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StayFinder | Find Your Perfect Stay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111618] dark:text-white transition-colors duration-300">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-solid border-[#f0f3f4] dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-3">
+<div class="max-w-[1280px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-[#111618] dark:text-white text-xl font-bold leading-tight tracking-tight">StayFinder</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Explore</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Trips</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Favorites</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex min-w-[100px] cursor-pointer items-center justify-center rounded-full h-11 px-5 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+                    Sign Up
+                </button>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-full h-11 px-5 bg-[#f0f3f4] dark:bg-slate-800 text-[#111618] dark:text-white text-sm font-bold hover:bg-[#e4e8ea] transition-all">
+                    Log In
+                </button>
+</div>
+</div>
+</header>
+<main class="flex flex-col">
+<!-- Hero Section with Search -->
+<section class="relative h-[600px] w-full flex items-center justify-center px-6 overflow-hidden">
+<!-- Hero Carousel Simulation (Static for UI design) -->
+<div class="absolute inset-0 bg-cover bg-center transition-all duration-700 brightness-[0.7]" data-alt="Luxury resort swimming pool at sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCw9gyvOaY-Qbl3yhGpU_c6fgGdLNXJ2D7nx3O8HMwC8w33VhTZa9Y1dyAzzzzLRjYWxKFDgLiNTvzg2baGOLo9RMuuQSyS-EU__dtdh1cxYSqgMhn1c_gOiOHqdtyQb6ZDKcmWwD5e5VwlsulpHp_ARms3p7eHJfDC44QB4Q8ZcU0i5rDNmtUVtbl1LrTJN0RYpxZK83RGFZ0XaoPvXLuv_lIKHH_X-5pgQmrV931kmxKlpPcRBRZXUCQmMb263CoGvwXMRfzjaJg');">
+</div>
+<div class="relative z-10 w-full max-w-[850px] flex flex-col items-center gap-8 text-center">
+<div class="space-y-4">
+<h2 class="text-white text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-md">
+                        Find your next adventure
+                    </h2>
+<p class="text-white/90 text-lg md:text-xl font-medium max-w-2xl mx-auto drop-shadow-sm">
+                        Discover unique stays in over 190 countries around the world.
+                    </p>
+</div>
+<!-- Floating Search Pill -->
+<div class="w-full bg-white dark:bg-background-dark p-2 md:p-3 rounded-full shadow-2xl flex flex-col md:flex-row items-center gap-2 border border-white/20">
+<div class="flex-1 flex items-center w-full px-4 border-r border-gray-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary mr-3">location_on</span>
+<div class="flex flex-col items-start w-full">
+<span class="text-[10px] uppercase font-bold text-gray-400">Location</span>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-sm font-medium placeholder:text-gray-400" placeholder="Where are you going?" type="text"/>
+</div>
+</div>
+<div class="flex-1 flex items-center w-full px-4 border-r border-gray-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary mr-3">calendar_today</span>
+<div class="flex flex-col items-start w-full">
+<span class="text-[10px] uppercase font-bold text-gray-400">Dates</span>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-sm font-medium placeholder:text-gray-400" placeholder="Add dates" type="text"/>
+</div>
+</div>
+<div class="flex-1 flex items-center w-full px-4">
+<span class="material-symbols-outlined text-primary mr-3">group</span>
+<div class="flex flex-col items-start w-full">
+<span class="text-[10px] uppercase font-bold text-gray-400">Guests</span>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-sm font-medium placeholder:text-gray-400" placeholder="Add guests" type="text"/>
+</div>
+</div>
+<button class="w-full md:w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Most Popular Section -->
+<section class="max-w-[1280px] mx-auto w-full py-16 px-6">
+<div class="flex items-center justify-between mb-8 px-2">
+<div>
+<h3 class="text-2xl md:text-3xl font-bold tracking-tight">Most Popular</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Our guests' top-rated retreats this month</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-gray-200 dark:border-slate-700 flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-gray-200 dark:border-slate-700 flex items-center justify-center hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-6 hide-scrollbar pb-8 px-2">
+<!-- Card 1 -->
+<div class="flex-none w-[280px] group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern high-end hotel exterior with lights" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5PPyD0N8_09fxVmYnV3X2yAnbGehvfcJm1mmdXwM_av6-wQe9mYaewDtMQu_zbuEzNJbQ98jTAD6Mf8L5e35K5jXM5KCXL3borCsZecQiT4GdA-29ES92DNolnymsXYXkqnURE7rhDTQH4FFetDbJI4SumKvYP8cyVVLypst6NZVKWyP7LWMo3YJn-9zAhJO2bD5pJAr0GNdqawgeqayvTdJRnBBqQZY6iaYukvvaS9yXb7oquiM7OxywdbcpyuWqwIx2EZvj6F4');"></div>
+<button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[12px] font-bold text-primary">
+                            FEATURED
+                        </div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-lg">The Grand Resort</h4>
+<p class="text-gray-500 text-sm">Santorini, Greece</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="text-lg font-bold">$250</span>
+<span class="text-gray-500 text-sm">/ night</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex-none w-[280px] group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Cozy cabin in the pine forest" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCslvuNhJSrt-JoSxpI2-4MrPVzU2TOMX5EfSGHCfgWXtwGKWsksdzf46PPZ7qu5gtV-JVZxLUKkmU375-DJH1QW_WzgX0I5qKtvpbq0qWVlErsaYNE3QauCxUFa7Z4CQ5HF3tK0QR1KU-JmE2rU2lrsATD9HjzgrcSUFPSmqq-a-RdcJE_-482D6VP5Q-6E5PGRWSu5EXp-V9T4mqwd8ZzDeIxACvQyX8_w7hfYR-J-ldAM0pk8EEf_LUwoiRgRa7MFo7QloSgZRM');"></div>
+<button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-lg">Alpine Lodge</h4>
+<p class="text-gray-500 text-sm">Swiss Alps</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+<span class="text-sm font-bold">4.8</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="text-lg font-bold">$180</span>
+<span class="text-gray-500 text-sm">/ night</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex-none w-[280px] group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Skyline suite with large windows" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAmq97GZvJ9NJYzb7opARSxFqEFarzke6ZPBUTie0a2U6m1Z5EiSI5w5x6cbc0y_0k4_nr1Ogwfd2AM76J-uy5HOnSONLLdFSl2snOIbeZGW4ZvtS6f431S_Lp0oWQdd7mzhSnO4aN46PDJGK7s70iXW0vsEClwJ-Z98HAG-YcHxzZ-3H6uzM1k6PBrd2rqB-jnxSky9_o_XRcMpKLUPUS__7WP2-T9n82aLJIefKV0gBP2NoA-LK1pen_mc22h5IB2m_oMQJYRouk');"></div>
+<button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-lg">Skyline Suites</h4>
+<p class="text-gray-500 text-sm">Dubai, UAE</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+<span class="text-sm font-bold">5.0</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="text-lg font-bold">$320</span>
+<span class="text-gray-500 text-sm">/ night</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex-none w-[280px] group cursor-pointer">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Beachfront villa with white sand" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZ3kqAAj3mm0dB8YQGYW0mXuYKNGlRC-WlA2Pne-bSjB1PoPIYXESh8spi1cwS8ET1SP-rBFDYI7eW7kcLJaQ73kQ8W5ZxIYhbrFGLn80Y9s2QScwMqcrqV4Y2ScnOv3MxTh8bxBuDpyG7fDUqO-Ub-ItMVfPNmRtLRn6hU8d02CgTl-u-s2fj0Vz14_7QD0N8YL0UwAenS6FBwHoTCFgbP3LQgQ6oL6I9A1I_rqhwrPa9Q4HPH87tzaD8ymfztB2iJ6Hf-uLk2l0');"></div>
+<button class="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-bold text-lg">Ocean View Villa</h4>
+<p class="text-gray-500 text-sm">Bali, Indonesia</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+<span class="text-sm font-bold">4.7</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="text-lg font-bold">$210</span>
+<span class="text-gray-500 text-sm">/ night</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Locations Grid -->
+<section class="bg-white dark:bg-slate-900 py-20 px-6">
+<div class="max-w-[1280px] mx-auto">
+<div class="mb-12">
+<h3 class="text-2xl md:text-3xl font-bold tracking-tight">Trending Locations</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">Discover the cities everyone is talking about</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 h-[600px]">
+<div class="md:col-span-2 relative group overflow-hidden rounded-2xl cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Eiffel Tower in Paris" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB82F58zxpLkqIQbtw5ayxMieFeDOspgsrcLRhflH10yLiTakwUT9aSXgAL1mSben1_0ObimPMQkXsLLf458tOSMnS0hYrhVCxRaWX1E0CYPEbiX1PynVenO8zpVkt0ewVvfTVMXwNmo8IRVWaDoBgsoVqxv_AXDhEUMcVGtjCAwlsh8IdEZO2jvUOyXTdPL-905TrspJFMbJ8w-cQmp5Q426FFZm1MfkXXvDzgVZQu6D9csAXotCA02UdCDmw0pIe8AC9nI4JSJrw');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h5 class="text-white text-3xl font-bold">Paris</h5>
+<p class="text-white/80 text-sm">2,450+ properties</p>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-2xl cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Tokyo city street at night" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCiQ3eE6kKMjJj8gXJRIEUURvPsZC5SMHloU6AYUQ-69jxfhoTHG-IajW0S8POhXJGFySvVHz4ukPOW3eJRSdwvRsxXwspBP9k9fLcqQhc-Gdqj3GTL_YsS7cpQZzOCfwg7pKeudRAVZ6f8McCNwxf0rq5AyaOzvOJ678_lVX3IQM3iuq8L8mb79Tt7Nnw90zVOgJQ-sbkJKNR4GqCC-ev6O9uLToCntPbdEwzcv2fiAbACyzcAYNOR_rupiqJhR1n44AIYuXUIH7Y');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h5 class="text-white text-2xl font-bold">Tokyo</h5>
+<p class="text-white/80 text-sm">1,890+ properties</p>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-2xl cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Grand Canal in Venice" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAal3La73A6Ds5Ib4jtZ2ZyYbYKgtZeG3exbJV_oq7iVgDNEGYPbxVaOEg-_RPkLnzMyQbTFq049cgCuOGB2TE_m5OInrRa09-0BjfgsZ12DWlu3OAjRuTXiU7z3ietBtu1tQ-z1u7VqgJkpXwGeS8ZPbsH55rWIwAa7TwQhBfUw2ZjysUxHvwaLSD_ZkcuZDo3Egun3JouuZ79HUdWYbpflCiH8gz8G3jnAnGAEbrRMXmOnPrs6rIF7IeLPwgOTjbssyd1lgMhXsA');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h5 class="text-white text-2xl font-bold">Venice</h5>
+<p class="text-white/80 text-sm">940+ properties</p>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-2xl cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Banff National Park mountains" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnEWtXEk2yOExWbBQPOH03mffY8duTrkt5UMU_dD2ekw98A-TgAD29sGqVi8WKEQhX5qPMpu2OQ9I4Qq60tMsujmYSn8ckCCxZvXZiXAYsWikh4x1L1ALkHZGN1fImf9iuv3BvnYDnLD3yctvHhpsqglwyzZDovviIr_D_hMrSFaW3VdKPHApk1N46kqIM7dmybjBSKKYALkg1Ob9ifm1SdJUPW9nvU9EYESAG8FwPEvliHG9dP2tzgGbQV2HWS4nZC-4_-ouCwnM');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h5 class="text-white text-2xl font-bold">Banff</h5>
+<p class="text-white/80 text-sm">420+ properties</p>
+</div>
+</div>
+<div class="md:col-span-2 relative group overflow-hidden rounded-2xl cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Dubai Burj Khalifa and skyline" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDArFgQrpg3_BHQrPg8YqLrOF2Iwq6NJAvquPiGaDGD_NrPS696VucHO9s4AeEkFadnFlDkd7-uo5jbO5zJGQ9J1OlMaH0gMLPZs9rYz8yjRYwPHeUmLnBaX2D-bJZLIUSQ-m4C57I8zui3Tbt5ys1lW5YeKMhrLjTDw7WyKTrxOuZASDGK5MRmgATcmdt2x6oLj0TBjVPs9NcI35HD7BiXlMLQ_9DDdHqAOciSvY4Jm_nVX_Of6tnUXC25-bdccmqXLWnjFIG3hhs');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h5 class="text-white text-3xl font-bold">Dubai</h5>
+<p class="text-white/80 text-sm">3,120+ properties</p>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-2xl cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Bali temple by the water" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaoUkb1_XJ3w7eyY7gvxPvVBxKH0gryjq6NLlFZybF4a_9w-NwmarrqcmtsaSwKLYqh8QfZtrtxP8jvZ-uye-sJK-gJEPESyitzMUOQZENJiBh8kvMs_IhH47M_o-NzkB2lQtgx1puMbMQldEb-DK2V_nlDvZI5b1Z9RCtbXgCRBaISlEgbrJ2IEFnxUREDJ8K2YejFJxz5BX04gLw-kj_d2iyuoYTM-ogjE6zZ9paTB2jmNIjSSU32gjA9q6rYgBX4Mv64Ti2R3U');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h5 class="text-white text-2xl font-bold">Bali</h5>
+<p class="text-white/80 text-sm">5,600+ properties</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="max-w-[1280px] mx-auto w-full py-20 px-6">
+<div class="bg-primary rounded-3xl p-8 md:p-16 flex flex-col items-center text-center gap-6 shadow-2xl shadow-primary/40">
+<div class="max-w-xl space-y-4">
+<h3 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Get inspired for your next trip</h3>
+<p class="text-white/80 text-lg">Subscribe to get secret deals and the latest travel guides delivered straight to your inbox.</p>
+</div>
+<div class="w-full max-w-md relative flex items-center p-1.5 bg-white rounded-full">
+<input class="flex-1 bg-transparent border-none focus:ring-0 px-6 py-3 text-sm font-medium text-gray-800" placeholder="Enter your email" type="email"/>
+<button class="bg-primary text-white rounded-full px-8 py-3 font-bold text-sm shadow-md hover:bg-[#0e8ec9] transition-all">
+                        Subscribe
+                    </button>
+</div>
+<p class="text-white/60 text-xs">We value your privacy. Unsubscribe at any time.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-gray-100 dark:border-slate-800 pt-20 pb-10 px-6">
+<div class="max-w-[1280px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
+<div class="col-span-1 lg:col-span-2">
+<div class="flex items-center gap-2 text-primary mb-6">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h4 class="text-[#111618] dark:text-white text-xl font-bold">StayFinder</h4>
+</div>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-xs">
+                        Building a world where anyone can belong anywhere. Discover incredible stays around the globe.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-[#f0f3f4] dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-[#f0f3f4] dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-[#f0f3f4] dark:bg-slate-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+</div>
+</div>
+<div>
+<h6 class="font-bold text-sm mb-6 uppercase tracking-wider">Support</h6>
+<ul class="space-y-4">
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Safety Information</a></li>
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Cancellation Options</a></li>
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Our COVID-19 Response</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-sm mb-6 uppercase tracking-wider">Community</h6>
+<ul class="space-y-4">
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">StayFinder.org</a></li>
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Combatting discrimination</a></li>
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Guest Referrals</a></li>
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Host Rewards</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-sm mb-6 uppercase tracking-wider">Hosting</h6>
+<ul class="space-y-4">
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Try Hosting</a></li>
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">AirCover for Hosts</a></li>
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Explore resources</a></li>
+<li><a class="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Visit our community forum</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-6">
+<p class="text-gray-400 text-xs">© 2024 StayFinder Inc.</p>
+<a class="text-gray-400 text-xs hover:text-gray-600 transition-colors" href="#">Privacy</a>
+<a class="text-gray-400 text-xs hover:text-gray-600 transition-colors" href="#">Terms</a>
+<a class="text-gray-400 text-xs hover:text-gray-600 transition-colors" href="#">Sitemap</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-xs font-bold hover:underline">
+<span class="material-symbols-outlined text-sm">language</span>
+                        English (US)
+                    </button>
+<button class="flex items-center gap-2 text-xs font-bold hover:underline">
+                        $ USD
+                    </button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
