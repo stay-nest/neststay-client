@@ -1,0 +1,82 @@
+[
+  {
+    "location": {
+      "slug": "the-grand-resort-santorini",
+      "hotel_id": 1,
+      "name": "The Grand Resort",
+      "description": "Luxurious resort with stunning views of the Aegean Sea",
+      "address": "Oia, Santorini",
+      "latitude": 36.4619,
+      "longitude": 25.3753,
+      "city": "Santorini",
+      "state": "South Aegean",
+      "country": "Greece",
+      "is_active": true,
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuC5PPyD0N8_09fxVmYnV3X2yAnbGehvfcJm1mmdXwM_av6-wQe9mYaewDtMQu_zbuEzNJbQ98jTAD6Mf8L5e35K5jXM5KCXL3borCsZecQiT4GdA-29ES92DNolnymsXYXkqnURE7rhDTQH4FFetDbJI4SumKvYP8cyVVLypst6NZVKWyP7LWMo3YJn-9zAhJO2bD5pJAr0GNdqawgeqayvTdJRnBBqQZY6iaYukvvaS9yXb7oquiM7OxywdbcpyuWqwIx2EZvj6F4",
+      "rating": 4.9,
+      "pricePerNight": 250
+    },
+    "variant": "tall",
+    "featured": true
+  },
+  {
+    "location": {
+      "slug": "alpine-lodge-swiss-alps",
+      "hotel_id": 2,
+      "name": "Alpine Lodge",
+      "description": "Cozy mountain retreat in the heart of the Swiss Alps",
+      "address": "Zermatt, Valais",
+      "latitude": 46.0207,
+      "longitude": 7.7491,
+      "city": "Swiss Alps",
+      "state": "Valais",
+      "country": "Switzerland",
+      "is_active": true,
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuCslvuNhJSrt-JoSxpI2-4MrPVzU2TOMX5EfSGHCfgWXtwGKWsksdzf46PPZ7qu5gtV-JVZxLUKkmU375-DJH1QW_WzgX0I5qKtvpbq0qWVlErsaYNE3QauCxUFa7Z4CQ5HF3tK0QR1KU-JmE2rU2lrsATD9HjzgrcSUFPSmqq-a-RdcJE_-482D6VP5Q-6E5PGRWSu5EXp-V9T4mqwd8ZzDeIxACvQyX8_w7hfYR-J-ldAM0pk8EEf_LUwoiRgRa7MFo7QloSgZRM",
+      "rating": 4.8,
+      "pricePerNight": 180
+    },
+    "variant": "tall",
+    "featured": false
+  },
+  {
+    "location": {
+      "slug": "skyline-suites-dubai",
+      "hotel_id": 3,
+      "name": "Skyline Suites",
+      "description": "Modern luxury suites with panoramic city views",
+      "address": "Downtown Dubai",
+      "latitude": 25.2048,
+      "longitude": 55.2708,
+      "city": "Dubai",
+      "state": "Dubai",
+      "country": "UAE",
+      "is_active": true,
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAmq97GZvJ9NJYzb7opARSxFqEFarzke6ZPBUTie0a2U6m1Z5EiSI5w5x6cbc0y_0k4_nr1Ogwfd2AM76J-uy5HOnSONLLdFSl2snOIbeZGW4ZvtS6f431S_Lp0oWQdd7mzhSnO4aN46PDJGK7s70iXW0vsEClwJ-Z98HAG-YcHxzZ-3H6uzM1k6PBrd2rqB-jnxSky9_o_XRcMpKLUPUS__7WP2-T9n82aLJIefKV0gBP2NoA-LK1pen_mc22h5IB2m_oMQJYRouk",
+      "rating": 5.0,
+      "pricePerNight": 320
+    },
+    "variant": "tall",
+    "featured": false
+  },
+  {
+    "location": {
+      "slug": "ocean-view-villa-bali",
+      "hotel_id": 4,
+      "name": "Ocean View Villa",
+      "description": "Tropical paradise with direct beach access",
+      "address": "Seminyak, Bali",
+      "latitude": -8.6842,
+      "longitude": 115.1702,
+      "city": "Bali",
+      "state": "Bali",
+      "country": "Indonesia",
+      "is_active": true,
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuBZ3kqAAj3mm0dB8YQGYW0mXuYKNGlRC-WlA2Pne-bSjB1PoPIYXESh8spi1cwS8ET1SP-rBFDYI7eW7kcLJaQ73kQ8W5ZxIYhbrFGLn80Y9s2QScwMqcrqV4Y2ScnOv3MxTh8bxBuDpyG7fDUqO-Ub-ItMVfPNmRtLRn6hU8d02CgTl-u-s2fj0Vz14_7QD0N8YL0UwAenS6FBwHoTCFgbP3LQgQ6oL6I9A1I_rqhwrPa9Q4HPH87tzaD8ymfztB2iJ6Hf-uLk2l0",
+      "rating": 4.7,
+      "pricePerNight": 210
+    },
+    "variant": "tall",
+    "featured": false
+  }
+]
