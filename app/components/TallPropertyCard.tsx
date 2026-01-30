@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { Location } from "../types/location";
 
 type TallPropertyCardProps = {
@@ -18,15 +21,26 @@ export default function TallPropertyCard({
   const pricePerNight = location.pricePerNight;
 
   return (
-    <div className="flex-none w-[280px] group cursor-pointer">
-      <div className="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
+    <Link
+      href={`/locations/${location.slug}`}
+      className="flex-none w-[280px] group cursor-pointer block"
+    >
+      <div className="relative aspect-3/4 rounded-xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all duration-300">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
           style={{
             backgroundImage: `url('${imageUrl}')`,
           }}
         ></div>
-        <button className="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors">
+        <button
+          type="button"
+          className="absolute top-4 right-4 z-10 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:text-red-500 transition-colors"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+          aria-label="Save"
+        >
           <span className="material-symbols-outlined text-xl">favorite</span>
         </button>
         {featured && (
@@ -55,6 +69,6 @@ export default function TallPropertyCard({
           <span className="text-gray-500 text-sm font-medium">Hidden</span>
         )}
       </div>
-    </div>
+    </Link>
   );
 }

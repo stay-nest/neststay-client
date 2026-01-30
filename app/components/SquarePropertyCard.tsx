@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import { Location } from "../types/location";
 
 type SquarePropertyCardProps = {
@@ -18,11 +21,22 @@ export default function SquarePropertyCard({
   const pricePerNight = location.pricePerNight;
 
   return (
-    <div className="flex flex-col gap-3 group cursor-pointer">
+    <Link
+      href={`/locations/${location.slug}`}
+      className="flex flex-col gap-3 group cursor-pointer"
+    >
       <div className="relative w-full aspect-square overflow-hidden rounded-xl">
-        <div className="absolute top-3 right-3 z-10 text-white drop-shadow-md hover:scale-110 transition active:scale-95">
+        <button
+          type="button"
+          className="absolute top-3 right-3 z-10 text-white drop-shadow-md hover:scale-110 transition active:scale-95"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+          aria-label="Save"
+        >
           <span className="material-symbols-outlined text-[28px]">favorite</span>
-        </div>
+        </button>
         {featured && (
           <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[12px] font-bold text-primary z-10">
             FEATURED
@@ -51,6 +65,6 @@ export default function SquarePropertyCard({
           <span className="text-[14px] font-normal">{rating}</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

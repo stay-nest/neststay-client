@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hotel Property Details</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111618] dark:text-gray-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-white dark:bg-background-dark overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-background-dark flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-100 dark:border-gray-800 px-4 md:px-20 py-3">
+<div class="flex items-center gap-8 w-full max-w-[1200px] mx-auto">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">travel_explore</span>
+<h2 class="text-[#111618] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">LuxeStay</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-center">
+<div class="flex items-center border border-gray-200 dark:border-gray-700 rounded-full py-2 px-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer bg-white dark:bg-gray-800">
+<span class="text-sm font-semibold px-4 border-r border-gray-200 dark:border-gray-700">Anywhere</span>
+<span class="text-sm font-semibold px-4 border-r border-gray-200 dark:border-gray-700">Any week</span>
+<span class="text-sm font-normal px-4 text-gray-500">Add guests</span>
+<div class="bg-primary p-2 rounded-full text-white ml-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">search</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-sm font-semibold px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 hidden lg:block">Airbnb your home</button>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-xl">language</span>
+</button>
+<button class="flex items-center gap-3 border border-gray-200 dark:border-gray-700 p-2 pl-3 rounded-full hover:shadow-md transition-shadow bg-white dark:bg-gray-800">
+<span class="material-symbols-outlined">menu</span>
+<div class="bg-gray-500 rounded-full w-8 h-8 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-base">person</span>
+</div>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto w-full px-4 md:px-10 lg:px-20">
+<!-- PageHeading -->
+<div class="flex flex-col gap-2 py-6">
+<h1 class="text-[#111618] dark:text-white text-3xl font-bold leading-tight tracking-tight">Modern Luxury Suite in Manhattan Skyline</h1>
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-sm font-semibold">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary filled-icon text-base">star</span>
+<span>4.92</span>
+</div>
+<span class="text-gray-400">·</span>
+<button class="underline decoration-1 underline-offset-2">128 reviews</button>
+<span class="text-gray-400">·</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-base">workspace_premium</span>
+<span>Superhost</span>
+</div>
+<span class="text-gray-400">·</span>
+<button class="underline decoration-1 underline-offset-2">Manhattan, New York, United States</button>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm font-semibold underline decoration-1 underline-offset-2">
+<span class="material-symbols-outlined text-base">ios_share</span> Share
+                            </button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm font-semibold underline decoration-1 underline-offset-2">
+<span class="material-symbols-outlined text-base">favorite</span> Save
+                            </button>
+</div>
+</div>
+</div>
+<!-- ImageGrid -->
+<div class="grid grid-cols-4 grid-rows-2 gap-2 h-[450px] rounded-xl overflow-hidden mb-8">
+<div class="col-span-2 row-span-2 bg-center bg-no-repeat bg-cover hover:opacity-90 transition-opacity cursor-pointer" data-alt="Main luxury living room with skyline view" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC2EaCEWqKQNujc_DfqNY_gATs3mdahxPAFSq4ycL-pbCgCxKlRhH3vg09q6Lbjwm5GDawLzRo8tvIt3DV1NisqaK5TpnD06ExPWVMEOXV_zrHFWZU-s_p4HVAlfArqauqiXIWTPREJcYXM_azZZqVJUs7esQ6dGrLfi7MJTQoaf197csQJgty__O7QQIMNxw05pZc1zgS_RbrI5it9B_uqtnG7Dz7tjsfy8MvClMrqF6oXcHj5ZaZAGKBem3X0wYWE6owfJ1Ww41I");'></div>
+<div class="bg-center bg-no-repeat bg-cover hover:opacity-90 transition-opacity cursor-pointer" data-alt="Modern minimalist kitchen area" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjOaZpE7HCW_-ZUha-1qQrKKbEdVcLwI_A3D4ljxPIDUA3rVTbX49Dvlqxt4hA0YLCNi0OnXRqsmnPiJl5RqaageuhTl589QprCxNUFVN2gJzQvEM1dG41-Nw1xGATS83djpDVPMGuPwU4oXDUNpXTjdIgXzcbrNWVDQDiuYIjH4wP3ac5flOPsR2oHr9_1vyfLOr0vSoca6HE4AS3_uPYuUfArBRK2JB7lytRCV1fdZCnggj4FDCAkjk5n0f4CBC3eUPciBxxD4A");'></div>
+<div class="bg-center bg-no-repeat bg-cover hover:opacity-90 transition-opacity cursor-pointer rounded-tr-xl" data-alt="Primary bedroom with floor to ceiling windows" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUngSDSmvrhGf6fK35ox96XS9vsjbXZp4FUoipFkhK4EBg5SX70YXaadgN68-vWg4OJKMM0Ax7afYNo8TzYiYSGtfbCGALKc6INoPjqp9C5SHH0YWqAZt08NioYUDPfpAhIbTh1OoWm1301IBNQ1tUXlyTd1nJ1jmbRiK4Juq5JhBSINH84GfRerzrHoxEzPX-je9WE1v39GXLywrbH-YqtqCK7qD7CjMMKmOgckQshPqfr54me0O_b9Ka1Ia8xSm6-8iraNK7wgk");'></div>
+<div class="bg-center bg-no-repeat bg-cover hover:opacity-90 transition-opacity cursor-pointer" data-alt="Designer bathroom with marble finish" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyoeSerEUEo4ky5nMv5Pg-tnuRiDAJQM1IDCA9lioKIcE9tBK26GhsaXgmhcP-XuOTne_-NnpqOe8PVJ6I2dqZb1rcksCEgFTLmpz10PctrzDY26ELZ9pyvFGRyy6SZqixlaw8HGnErzEz44cpQUpkCUek9xODopTZrVOU1h-Uw6VkkoYPls5dK0KPk80B85AY4QQSqQAWBH11L9q5tEfwK3imtE7vyZ56OuWJ3rIggw254Ky-6Mpl-f1-uyHE6GE7-FbldkibBb8");'></div>
+<div class="bg-center bg-no-repeat bg-cover hover:opacity-90 transition-opacity cursor-pointer rounded-br-xl relative" data-alt="Terrace overlooking New York City" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYN5qt61WeL3wH3aznPlkLcz8jf6qOu4ulL79ihPgujQyfaqY-7Cm6B12sBwWvqdve2S6wIqV3cHI6LguVJm8aG8bCWhc1ehnw849-rOndNJPLtVtHO2n_x_AEo14Wfd2w5JUGEiZEI6QpNjT2PBK-1V1Bas5JZEXOOU5QQhxeZFvA1SCrycV87V-4EbIniXji-d0Im-9Mdi-1-ItvxyWqC0ktNpjvbR477Jj8_eLoTN5qGmhpT-P4enrQofItkMmEdwHJrV-SrXA");'>
+<button class="absolute bottom-4 right-4 bg-white border border-black px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-sm hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-base">grid_view</span> Show all photos
+                        </button>
+</div>
+</div>
+<!-- Main Body Split -->
+<div class="flex flex-col lg:flex-row gap-16 relative">
+<!-- Left Column -->
+<div class="flex-1">
+<!-- HeadlineText & Avatar -->
+<div class="flex justify-between items-start border-b border-gray-200 dark:border-gray-800 pb-6">
+<div>
+<h3 class="text-2xl font-bold">Entire rental unit hosted by Sarah</h3>
+<p class="text-gray-600 dark:text-gray-400">2 guests · 1 bedroom · 1 bed · 1 bath</p>
+</div>
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-cover bg-center border border-gray-100" data-alt="Profile picture of Sarah the host" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD7WOzK-xEqQy4B_tKoH6ifVQWxXbyDTMIC_qm3AQ5vKX4c90BJGdaKnWPgwI13ps0e3y7-wFNqfiOLAuU4KhNePh7hLO6B2XCf-7VKHiyh9aAv_ty6VbYVOKY5lTHBqJujzte_f09-Bt3gk5KQ7qthfB0wLebzwxOCSdxHHWkTBSpAjvnVxu44660vPvY87kvg1Dtb7FITAwy6bUZYCTU-pP4kqkNF0imTHxM7oV4eFpHbEpFSafJddo8pp9POBunCC3Dd3hxhR9w");'></div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white p-1 rounded-full border-2 border-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] filled-icon">verified</span>
+</div>
+</div>
+</div>
+<!-- Highlight Features -->
+<div class="py-8 border-b border-gray-200 dark:border-gray-800 space-y-6">
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-2xl pt-1">workspace_premium</span>
+<div>
+<h4 class="font-bold">Sarah is a Superhost</h4>
+<p class="text-gray-500 text-sm">Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-2xl pt-1">location_on</span>
+<div>
+<h4 class="font-bold">Great location</h4>
+<p class="text-gray-500 text-sm">95% of recent guests gave the location a 5-star rating.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-2xl pt-1">calendar_today</span>
+<div>
+<h4 class="font-bold">Free cancellation for 48 hours</h4>
+<p class="text-gray-500 text-sm">Get a full refund if you change your mind.</p>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="py-8 border-b border-gray-200 dark:border-gray-800">
+<p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Welcome to our sophisticated Manhattan sanctuary. This designer suite features floor-to-ceiling windows offering breathtaking views of the city skyline. Meticulously curated with high-end finishes, this space provides the ultimate urban retreat for those seeking both comfort and style...
+                            </p>
+<button class="mt-4 flex items-center gap-1 font-bold underline">
+                                Show more <span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+<!-- Amenities -->
+<div class="py-8 border-b border-gray-200 dark:border-gray-800">
+<h3 class="text-2xl font-bold mb-6">What this place offers</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-4 py-1">
+<span class="material-symbols-outlined text-2xl">apartment</span>
+<span>City skyline view</span>
+</div>
+<div class="flex items-center gap-4 py-1">
+<span class="material-symbols-outlined text-2xl">wifi</span>
+<span>Fast wifi – 345 Mbps</span>
+</div>
+<div class="flex items-center gap-4 py-1">
+<span class="material-symbols-outlined text-2xl">work</span>
+<span>Dedicated workspace</span>
+</div>
+<div class="flex items-center gap-4 py-1">
+<span class="material-symbols-outlined text-2xl">kitchen</span>
+<span>Kitchen</span>
+</div>
+<div class="flex items-center gap-4 py-1">
+<span class="material-symbols-outlined text-2xl">ac_unit</span>
+<span>Central air conditioning</span>
+</div>
+<div class="flex items-center gap-4 py-1">
+<span class="material-symbols-outlined text-2xl">tv</span>
+<span>65" HDTV with Netflix</span>
+</div>
+</div>
+<button class="mt-8 border border-black dark:border-gray-400 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                                Show all 48 amenities
+                            </button>
+</div>
+</div>
+<!-- Right Column (Sticky) -->
+<div class="lg:w-[380px]">
+<div class="sticky top-28 p-6 border border-gray-200 dark:border-gray-700 rounded-xl shadow-xl bg-white dark:bg-gray-900">
+<div class="flex justify-between items-end mb-6">
+<div>
+<span class="text-2xl font-bold">$420</span>
+<span class="text-gray-500">night</span>
+</div>
+<div class="flex items-center gap-1 text-sm font-semibold">
+<span class="material-symbols-outlined text-primary filled-icon text-[14px]">star</span>
+<span>4.92</span>
+<span class="text-gray-400">·</span>
+<span class="underline text-gray-500">128 reviews</span>
+</div>
+</div>
+<div class="border border-gray-300 dark:border-gray-600 rounded-lg mb-4">
+<div class="flex border-b border-gray-300 dark:border-gray-600">
+<div class="flex-1 p-3 border-r border-gray-300 dark:border-gray-600 cursor-pointer">
+<div class="text-[10px] font-bold uppercase">Check-in</div>
+<div class="text-sm">6/15/2024</div>
+</div>
+<div class="flex-1 p-3 cursor-pointer">
+<div class="text-[10px] font-bold uppercase">Checkout</div>
+<div class="text-sm">6/20/2024</div>
+</div>
+</div>
+<div class="p-3 cursor-pointer flex justify-between items-center">
+<div>
+<div class="text-[10px] font-bold uppercase">Guests</div>
+<div class="text-sm">2 guests</div>
+</div>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-3.5 rounded-lg font-bold text-lg mb-4 hover:brightness-110 transition-all">
+                                Reserve
+                            </button>
+<p class="text-center text-gray-500 text-sm mb-6">You won't be charged yet</p>
+<div class="space-y-4 mb-6">
+<div class="flex justify-between text-gray-700 dark:text-gray-300">
+<span class="underline">$420 x 5 nights</span>
+<span>$2,100</span>
+</div>
+<div class="flex justify-between text-gray-700 dark:text-gray-300">
+<span class="underline">Cleaning fee</span>
+<span>$120</span>
+</div>
+<div class="flex justify-between text-gray-700 dark:text-gray-300">
+<span class="underline">LuxeStay service fee</span>
+<span>$312</span>
+</div>
+</div>
+<div class="pt-6 border-t border-gray-200 dark:border-gray-800 flex justify-between font-bold text-lg">
+<span>Total before taxes</span>
+<span>$2,532</span>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-center gap-4 text-gray-500 py-4 border border-gray-200 dark:border-gray-800 rounded-xl">
+<span class="material-symbols-outlined text-primary">flag</span>
+<span class="text-sm font-semibold underline">Report this listing</span>
+</div>
+</div>
+</div>
+<!-- Reviews Section -->
+<section class="py-12 border-t border-gray-200 dark:border-gray-800 mt-12">
+<div class="flex items-center gap-2 text-2xl font-bold mb-8">
+<span class="material-symbols-outlined text-primary filled-icon text-3xl">star</span>
+<span>4.92 · 128 reviews</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-12 mb-12">
+<!-- Review Ratings -->
+<div class="flex items-center justify-between w-full">
+<span class="text-gray-700 dark:text-gray-300">Cleanliness</span>
+<div class="flex items-center gap-4 w-1/2">
+<div class="h-1 flex-1 bg-gray-200 rounded-full">
+<div class="h-full bg-primary rounded-full w-[98%]"></div>
+</div>
+<span class="text-xs font-bold w-6">4.9</span>
+</div>
+</div>
+<div class="flex items-center justify-between w-full">
+<span class="text-gray-700 dark:text-gray-300">Accuracy</span>
+<div class="flex items-center gap-4 w-1/2">
+<div class="h-1 flex-1 bg-gray-200 rounded-full">
+<div class="h-full bg-primary rounded-full w-[96%]"></div>
+</div>
+<span class="text-xs font-bold w-6">4.8</span>
+</div>
+</div>
+<div class="flex items-center justify-between w-full">
+<span class="text-gray-700 dark:text-gray-300">Communication</span>
+<div class="flex items-center gap-4 w-1/2">
+<div class="h-1 flex-1 bg-gray-200 rounded-full">
+<div class="h-full bg-primary rounded-full w-[100%]"></div>
+</div>
+<span class="text-xs font-bold w-6">5.0</span>
+</div>
+</div>
+</div>
+<!-- Individual Reviews -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-gray-200 bg-cover" data-alt="Avatar of reviewer Mark" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCg9VGpQEKStW2Doqba3vsGXicSu9Z5d3V2jcf1Xm0EkFSJyGQKSJYcqBiUhzCWYDesy2PFTCPSI8mTJl08m6GngGit36Adjn6vx3o_W6ooM3mv67Tty5bBE-ce1OgaVRrqBuiZJCeFNy9jpDy1vOXOQpFcagDvNSq7envQTItb2oLWsL7OGnqcMjS_yrBwVBCfElsFhp7JrEpM1mfz9O6JzEvRkH-KzrSg2y2b8PzqBzIEpzsj8XvfrGzIw3iwRmIetJX-iXBG560');"></div>
+<div>
+<h5 class="font-bold">Mark</h5>
+<p class="text-sm text-gray-500">May 2024</p>
+</div>
+</div>
+<p class="text-gray-700 dark:text-gray-300">Absolutely stunning views and Sarah was an incredible host. The location in Manhattan is unbeatable and the apartment was spotless. Highly recommend for any business trip.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full bg-gray-200 bg-cover" data-alt="Avatar of reviewer Emily" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7uix1AYmTjrYgZNUcQAw1709q0b0OKu44bq6R1iMOeUrevPHkyyQo4_oc8fmpIgQp5FjIFIvRsUsIB-SuuuhUm1MELZuQRIBeTJ3cgj4dRT_iuE93nIxqg5n5Cjbuv8XTalCH5zMDyKJaGB-pig7k7N4YN3a7FmqyNMVOr3fDME12iVUc-AXjviUvVFUTbByN48KF9v8fSFlSYU_PkY1AuDKlEaFv_wwtCLLWNSaBJNXO04fFxKsRdmoAz4gSH49sz-Q1Ms7l-3o');"></div>
+<div>
+<h5 class="font-bold">Emily</h5>
+<p class="text-sm text-gray-500">April 2024</p>
+</div>
+</div>
+<p class="text-gray-700 dark:text-gray-300">The photos don't even do justice to how beautiful the skyline looks at night. The amenities were top notch. It truly felt like a luxury hotel but with the comforts of home.</p>
+</div>
+</div>
+<button class="mt-10 border border-black dark:border-gray-400 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                        Show all 128 reviews
+                    </button>
+</section>
+<!-- Map Section -->
+<section class="py-12 border-t border-gray-200 dark:border-gray-800">
+<h3 class="text-2xl font-bold mb-6">Where you'll be</h3>
+<div class="w-full h-[480px] rounded-xl bg-gray-100 relative overflow-hidden group shadow-inner">
+<div class="absolute inset-0 bg-cover bg-center" data-location="Manhattan, New York" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDp7MuCqWhhEKO3SWl4rw-u4KY_0ecxDZBZJKlxDY5rL4i7C6KubJe-hiV4sZep0ehVFJE0Vo1BiM2BlCn6GUCBNM3BfBYibeGpXG4qeCtVe3F10uAwo540qegv2RCm1zDz3GWB29E3qjWtXCpepKyx7Gfm-z1UIHIX8k_UCX8YJjLfLybCV6KtvUfNGaGdsOb22sbgYp9Ibr-HaEK26IDEl5ysSSNCEruR_1AgQP2qSyN02byfxz3Ixg0kPOE8_sod2MPr7T0myms'); opacity: 0.8;"></div>
+<div class="absolute inset-0 bg-black/5 flex items-center justify-center">
+<div class="relative">
+<div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center animate-pulse">
+<div class="w-10 h-10 bg-primary rounded-full border-4 border-white shadow-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg">home</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<h4 class="font-bold mb-2">Manhattan, New York, United States</h4>
+<p class="text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl">
+                            The heart of New York City. You'll be steps away from Central Park, world-class dining, and the iconic Fifth Avenue shops. This neighborhood is known for its safety and vibrant atmosphere.
+                        </p>
+<button class="mt-4 flex items-center gap-1 font-bold underline">
+                            Show more <span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-12">
+<div class="max-w-[1200px] mx-auto px-4 md:px-20 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<h5 class="font-bold text-sm mb-4">Support</h5>
+<ul class="text-sm text-gray-600 dark:text-gray-400 space-y-3">
+<li class="hover:underline cursor-pointer">Help Center</li>
+<li class="hover:underline cursor-pointer">AirCover</li>
+<li class="hover:underline cursor-pointer">Anti-discrimination</li>
+<li class="hover:underline cursor-pointer">Cancellation options</li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-4">Hosting</h5>
+<ul class="text-sm text-gray-600 dark:text-gray-400 space-y-3">
+<li class="hover:underline cursor-pointer">Airbnb your home</li>
+<li class="hover:underline cursor-pointer">AirCover for Hosts</li>
+<li class="hover:underline cursor-pointer">Hosting resources</li>
+<li class="hover:underline cursor-pointer">Community forum</li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-4">LuxeStay</h5>
+<ul class="text-sm text-gray-600 dark:text-gray-400 space-y-3">
+<li class="hover:underline cursor-pointer">Newsroom</li>
+<li class="hover:underline cursor-pointer">New features</li>
+<li class="hover:underline cursor-pointer">Careers</li>
+<li class="hover:underline cursor-pointer">Investors</li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-sm mb-4">Social</h5>
+<div class="flex gap-4">
+<button class="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">social_leaderboard</span>
+</button>
+<button class="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">public</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-4 md:px-20 mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+<div class="flex gap-4 items-center">
+<p>© 2024 LuxeStay, Inc.</p>
+<span>·</span>
+<a class="hover:underline" href="#">Privacy</a>
+<span>·</span>
+<a class="hover:underline" href="#">Terms</a>
+<span>·</span>
+<a class="hover:underline" href="#">Sitemap</a>
+</div>
+<div class="flex gap-6 mt-4 md:mt-0 font-semibold">
+<button class="flex items-center gap-2 hover:underline">
+<span class="material-symbols-outlined text-base">language</span> English (US)
+                        </button>
+<button class="flex items-center gap-2 hover:underline">
+                            $ USD
+                        </button>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
