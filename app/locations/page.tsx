@@ -2,9 +2,8 @@ import LocationsHeader from "../components/LocationsHeader";
 import Footer from "../components/Footer";
 import Pagination from "../components/Pagination";
 import PropertyCard from "../components/PropertyCard";
-import { http } from "@/app/lib/http";
 import type { LocationsApiResponse } from "@/app/types/location";
-import { parsePage, parsePageSize } from "./utils";
+import { parsePage, parsePageSize, getInternalApiBaseUrl } from "./utils";
 
 type PageProps = {
   searchParams: Promise<{ page?: string; page_size?: string }>;
@@ -17,10 +16,32 @@ export default async function LocationsPage({ searchParams }: PageProps) {
 
   let data: LocationsApiResponse;
   try {
-    data = await http.get<LocationsApiResponse>("/locations", {
-      searchParams: { page, page_size: pageSize },
-      revalidate: 60,
+    // Get the base URL for internal API calls
+    const baseUrl = await getInternalApiBaseUrl();
+    
+    // Build query string for the Next.js API route
+    const queryParams = new URLSearchParams({
+      page: String(page),
+      page_size: String(pageSize),
     });
+    
+    // Call the Next.js API route which proxies to the backend
+    const response = await fetch(
+      `${baseUrl}/api/locations?${queryParams.toString()}`,
+      {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+        },
+        next: { revalidate: 60 },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status} ${response.statusText}`);
+    }
+
+    data = await response.json();
   } catch (err) {
     return (
       <>
