@@ -42,7 +42,7 @@ export default async function LocationsPage({ searchParams }: PageProps) {
     }
 
     data = await response.json();
-  } catch (err) {
+  } catch {
     return (
       <>
         <LocationsHeader />
@@ -58,9 +58,6 @@ export default async function LocationsPage({ searchParams }: PageProps) {
 
   const { items, total } = data;
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
-  const hasPrev = page > 1;
-  const hasNext = page < totalPages;
-
   return (
     <>
       <LocationsHeader />

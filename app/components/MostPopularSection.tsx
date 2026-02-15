@@ -21,9 +21,9 @@ export default function MostPopularSection() {
         </div>
       </div>
       <div className="flex overflow-x-auto gap-6 hide-scrollbar pb-8 px-2">
-        {propertiesData.map((property, index) => (
+        {propertiesData.map((property) => (
           <PropertyCard
-            key={property.location.hotel_id}
+            key={property.location.slug}
             location={property.location}
             variant={property.variant as "tall" | "square"}
             featured={property.featured}

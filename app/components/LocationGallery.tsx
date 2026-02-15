@@ -1,21 +1,19 @@
+import { FALLBACK_IMAGE_URL } from "@/app/lib/fallback-image";
+import type { LocationImage } from "@/app/types/location";
+
 type LocationGalleryProps = {
-  images: string[];
+  images: LocationImage[];
   locationName: string;
 };
 
 const PLACEHOLDER_ALT = "Property photo";
-const FALLBACK_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuC5PPyD0N8_09fxVmYnV3X2yAnbGehvfcJm1mmdXwM_av6-wQe9mYaewDtMQu_zbuEzNJbQ98jTAD6Mf8L5e35K5jXM5KCXL3borCsZecQiT4GdA-29ES92DNolnymsXYXkqnURE7rhDTQH4FFetDbJI4SumKvYP8cyVVLypst6NZVKWyP7LWMo3YJn-9zAhJO2bD5pJAr0GNdqawgeqayvTdJRnBBqQZY6iaYukvvaS9yXb7oquiM7OxywdbcpyuWqwIx2EZvj6F4";
 
 export default function LocationGallery({
   images,
   locationName,
 }: LocationGalleryProps) {
-  const effective =
-    images.length > 0 && images.some(Boolean)
-      ? images.filter(Boolean)
-      : [FALLBACK_IMAGE];
-  const [main, ...rest] = effective;
+  const hasImages = images.length > 0;
+  const [main, ...rest] = hasImages ? images : [];
   const hasRest = rest.length > 0;
 
   return (
@@ -23,44 +21,44 @@ export default function LocationGallery({
       <div
         className="col-span-2 row-span-2 bg-center bg-no-repeat bg-cover hover:opacity-90 transition-opacity cursor-pointer rounded-l-xl bg-gray-100 dark:bg-gray-800"
         style={{
-          backgroundImage: main ? `url('${main}')` : `url('${FALLBACK_IMAGE}')`,
+          backgroundImage: main ? `url('${main.url}')` : `url('${FALLBACK_IMAGE_URL}')`,
         }}
         role="img"
-        aria-label={main ? `${locationName} – main` : PLACEHOLDER_ALT}
+        aria-label={main ? main.alt_text || `${locationName} – main` : PLACEHOLDER_ALT}
       />
       {hasRest ? (
         <>
           <div
             className="bg-center bg-no-repeat bg-cover hover:opacity-90 transition-opacity cursor-pointer"
             style={{
-              backgroundImage: rest[0] ? `url('${rest[0]}')` : undefined,
+              backgroundImage: rest[0] ? `url('${rest[0].url}')` : undefined,
             }}
             role="img"
-            aria-label={rest[0] ? `${locationName} – photo 2` : PLACEHOLDER_ALT}
+            aria-label={rest[0] ? rest[0].alt_text || `${locationName} – photo 2` : PLACEHOLDER_ALT}
           />
           <div
             className="bg-center bg-no-repeat bg-cover hover:opacity-90 transition-opacity cursor-pointer rounded-tr-xl"
             style={{
-              backgroundImage: rest[1] ? `url('${rest[1]}')` : undefined,
+              backgroundImage: rest[1] ? `url('${rest[1].url}')` : undefined,
             }}
             role="img"
-            aria-label={rest[1] ? `${locationName} – photo 3` : PLACEHOLDER_ALT}
+            aria-label={rest[1] ? rest[1].alt_text || `${locationName} – photo 3` : PLACEHOLDER_ALT}
           />
           <div
             className="bg-center bg-no-repeat bg-cover hover:opacity-90 transition-opacity cursor-pointer"
             style={{
-              backgroundImage: rest[2] ? `url('${rest[2]}')` : undefined,
+              backgroundImage: rest[2] ? `url('${rest[2].url}')` : undefined,
             }}
             role="img"
-            aria-label={rest[2] ? `${locationName} – photo 4` : PLACEHOLDER_ALT}
+            aria-label={rest[2] ? rest[2].alt_text || `${locationName} – photo 4` : PLACEHOLDER_ALT}
           />
           <div
             className="bg-center bg-no-repeat bg-cover hover:opacity-90 transition-opacity cursor-pointer rounded-br-xl relative"
             style={{
-              backgroundImage: rest[3] ? `url('${rest[3]}')` : undefined,
+              backgroundImage: rest[3] ? `url('${rest[3].url}')` : undefined,
             }}
             role="img"
-            aria-label={rest[3] ? `${locationName} – photo 5` : PLACEHOLDER_ALT}
+            aria-label={rest[3] ? rest[3].alt_text || `${locationName} – photo 5` : PLACEHOLDER_ALT}
           >
             <button
               type="button"

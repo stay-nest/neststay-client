@@ -1,3 +1,13 @@
+export type LocationImage = {
+  filename: string;
+  file_path: string;
+  url: string;
+  alt_text: string;
+  is_featured: boolean;
+  sort_order: number;
+  created_at: string;
+};
+
 export type Location = {
   slug: string;
   hotel_id: number;
@@ -10,7 +20,7 @@ export type Location = {
   state: string;
   country: string;
   is_active: boolean;
-  imageUrl?: string;
+  featured_image?: LocationImage | null;
   rating?: number;
   pricePerNight?: number;
 };
@@ -35,7 +45,7 @@ export type LocationReview = {
 };
 
 export type LocationDetail = Location & {
-  images?: string[];
+  images?: LocationImage[];
   host?: LocationHost;
   reviewCount?: number;
   reviews?: LocationReview[];

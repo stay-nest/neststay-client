@@ -68,8 +68,8 @@ export default async function LocationDetailPage({ params }: PageProps) {
   const images =
     location.images && location.images.length > 0
       ? location.images
-      : location.imageUrl
-        ? [location.imageUrl]
+      : location.featured_image
+        ? [location.featured_image]
         : [];
   const rating = location.rating ?? 0;
   const reviewCount = location.reviewCount ?? 0;

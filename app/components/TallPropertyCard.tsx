@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { FALLBACK_IMAGE_URL } from "@/app/lib/fallback-image";
 import { Location } from "../types/location";
 
 type TallPropertyCardProps = {
@@ -8,15 +9,12 @@ type TallPropertyCardProps = {
   featured: boolean;
 };
 
-const fallbackImageUrl =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuC5PPyD0N8_09fxVmYnV3X2yAnbGehvfcJm1mmdXwM_av6-wQe9mYaewDtMQu_zbuEzNJbQ98jTAD6Mf8L5e35K5jXM5KCXL3borCsZecQiT4GdA-29ES92DNolnymsXYXkqnURE7rhDTQH4FFetDbJI4SumKvYP8cyVVLypst6NZVKWyP7LWMo3YJn-9zAhJO2bD5pJAr0GNdqawgeqayvTdJRnBBqQZY6iaYukvvaS9yXb7oquiM7OxywdbcpyuWqwIx2EZvj6F4";
-
 export default function TallPropertyCard({
   location,
   featured,
 }: TallPropertyCardProps) {
   const locationDisplay = `${location.city}, ${location.country}`;
-  const imageUrl = location.imageUrl ?? fallbackImageUrl;
+  const imageUrl = location.featured_image?.url ?? FALLBACK_IMAGE_URL;
   const rating = location.rating ?? 0;
   const pricePerNight = location.pricePerNight;
 
