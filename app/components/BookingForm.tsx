@@ -80,7 +80,7 @@ export default function BookingForm({
             <span>${CLEANING_FEE}</span>
           </div>
           <div className="flex justify-between text-gray-700 dark:text-gray-300">
-            <span className="underline">StayFinder service fee</span>
+            <span className="underline">Neststay service fee</span>
             <span>${serviceFee}</span>
           </div>
         </div>

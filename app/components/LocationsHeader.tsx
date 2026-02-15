@@ -38,7 +38,7 @@ export default function LocationsHeader() {
             </svg>
           </div>
           <h1 className="hidden lg:block text-xl font-bold tracking-tight text-primary">
-            StayFinder
+            Neststay
           </h1>
         </div>
 

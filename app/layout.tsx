@@ -10,7 +10,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "StayFinder | Find Your Perfect Stay",
+  title: "Neststay | Find Your Perfect Stay",
   description: "Discover unique stays in over 190 countries around the world.",
 };
 

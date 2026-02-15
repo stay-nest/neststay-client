@@ -10,7 +10,7 @@ export default function Footer() {
                   <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
                 </svg>
               </div>
-              <h4 className="text-[#111618] dark:text-white text-xl font-bold">StayFinder</h4>
+              <h4 className="text-[#111618] dark:text-white text-xl font-bold">Neststay</h4>
             </div>
             <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8 max-w-xs">
               Building a world where anyone can belong anywhere. Discover incredible stays around the globe.
@@ -39,7 +39,7 @@ export default function Footer() {
           <div>
             <h6 className="font-bold text-sm mb-6 uppercase tracking-wider">Community</h6>
             <ul className="space-y-4">
-              <li><a className="text-gray-500 text-sm hover:text-primary transition-colors" href="#">StayFinder.org</a></li>
+              <li><a className="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Neststay.org</a></li>
               <li><a className="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Combatting discrimination</a></li>
               <li><a className="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Guest Referrals</a></li>
               <li><a className="text-gray-500 text-sm hover:text-primary transition-colors" href="#">Host Rewards</a></li>
@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
         <div className="pt-8 border-t border-gray-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-6">
-            <p className="text-gray-400 text-xs">© 2024 StayFinder Inc.</p>
+            <p className="text-gray-400 text-xs">© 2024 Neststay Inc.</p>
             <a className="text-gray-400 text-xs hover:text-gray-600 transition-colors" href="#">Privacy</a>
             <a className="text-gray-400 text-xs hover:text-gray-600 transition-colors" href="#">Terms</a>
             <a className="text-gray-400 text-xs hover:text-gray-600 transition-colors" href="#">Sitemap</a>

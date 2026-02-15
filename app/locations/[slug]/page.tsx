@@ -31,12 +31,12 @@ export async function generateMetadata({
       revalidate: 60,
     });
     return {
-      title: `${location.name} | StayFinder`,
+      title: `${location.name} | Neststay`,
       description:
         location.description ?? `Stay at ${location.name} in ${location.city}, ${location.country}.`,
     };
   } catch {
-    return { title: "Location | StayFinder" };
+    return { title: "Location | Neststay" };
   }
 }
 

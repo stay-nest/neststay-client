@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-StayFinder (neststay-client) is a Next.js 16 property rental discovery application with a modern, responsive UI. It showcases unique stays across 190+ countries.
+Neststay (neststay-client) is a Next.js 16 property rental discovery application with a modern, responsive UI. It showcases unique stays across 190+ countries.
 
 ## Commands
 

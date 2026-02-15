@@ -56,7 +56,7 @@ export default function HomeHeader() {
                 <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
               </svg>
             </div>
-            <h1 className="text-[#111618] dark:text-white text-xl font-bold leading-tight tracking-tight">StayFinder</h1>
+            <h1 className="text-[#111618] dark:text-white text-xl font-bold leading-tight tracking-tight">Neststay</h1>
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <Link className="text-sm font-semibold hover:text-primary transition-colors" href="/locations">Explore</Link>
